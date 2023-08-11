@@ -14,7 +14,7 @@ struct MainView: View {
     var body: some View {
         VStack(spacing: 8.0) {
             Text("This is the SwiftUI View.")
-            
+
             Button("Ask UIKit to start async task.", action: {
                 viewModel.asyncDelegate?.didTapAsyncOne()
             })
@@ -31,7 +31,21 @@ struct MainView: View {
                 Text("Task Two: \(taskTwoMessage)")
             }
         }
+        .alert(viewModel.alertMessage ?? "Alert",
+               isPresented: $viewModel.displayAlert,
+               presenting: $viewModel.alertMessage,
+               actions: { _ in
+                    Button("OK", action: {})
+               }
+        )
+        .onReceive(notifier.$taskOneMessage, perform: { payload in taskCompleted(payload: payload) })
+        .onReceive(notifier.$taskTwoMessage, perform: { payload in taskCompleted(payload: payload) })
         .padding()
     }
 }
 
+extension MainView {
+    func taskCompleted(payload: String?) {
+        viewModel.taskCompleted(payload: payload)
+    }
+}
