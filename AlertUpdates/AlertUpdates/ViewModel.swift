@@ -8,5 +8,5 @@
 import Foundation
 
 class ViewModel: ObservableObject {
-    
+    unowned var asyncDelegate: AsyncDelegate?
 }

@@ -12,13 +12,26 @@ struct MainView: View {
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
-        VStack {
+        VStack(spacing: 8.0) {
             Text("This is the SwiftUI View.")
-
+            
             Button("Ask UIKit to start async task.", action: {
-
+                viewModel.asyncDelegate?.didTapAsyncOne()
             })
+
+            if let taskOneMessage = notifier.taskOneMessage {
+                Text("Task One: \(taskOneMessage)")
+            }
+
+            Button("Ask UIKit to start another async task.", action: {
+                viewModel.asyncDelegate?.didTapAsyncTwo()
+            })
+
+            if let taskTwoMessage = notifier.taskTwoMessage {
+                Text("Task Two: \(taskTwoMessage)")
+            }
         }
+        .padding()
     }
 }
 

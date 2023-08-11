@@ -8,5 +8,6 @@
 import Foundation
 
 class EventMessenger: ObservableObject {
-    @Published var tapCount: Int = 0
+    @Published var taskOneMessage: String?
+    @Published var taskTwoMessage: String?
 }
