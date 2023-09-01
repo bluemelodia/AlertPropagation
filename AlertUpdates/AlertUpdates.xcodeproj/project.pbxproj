@@ -12,9 +12,9 @@
 		145633DA2A86950900B75309 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145633D92A86950900B75309 /* ViewController.swift */; };
 		145633DF2A86950A00B75309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145633DE2A86950A00B75309 /* Assets.xcassets */; };
 		145633E22A86950A00B75309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145633E02A86950A00B75309 /* LaunchScreen.storyboard */; };
-		145633EA2A86957800B75309 /* EventMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145633E92A86957800B75309 /* EventMessenger.swift */; };
 		145633EC2A8695F200B75309 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145633EB2A8695F200B75309 /* MainView.swift */; };
 		145633EE2A86A03400B75309 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145633ED2A86A03400B75309 /* ViewModel.swift */; };
+		147414A72AA1780A0054C7DA /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147414A62AA1780A0054C7DA /* NetworkStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +25,9 @@
 		145633DE2A86950A00B75309 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		145633E12A86950A00B75309 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		145633E32A86950A00B75309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		145633E92A86957800B75309 /* EventMessenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMessenger.swift; sourceTree = "<group>"; };
 		145633EB2A8695F200B75309 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		145633ED2A86A03400B75309 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		147414A62AA1780A0054C7DA /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,8 @@
 				145633D52A86950900B75309 /* AppDelegate.swift */,
 				145633D72A86950900B75309 /* SceneDelegate.swift */,
 				145633D92A86950900B75309 /* ViewController.swift */,
+				147414A62AA1780A0054C7DA /* NetworkStatus.swift */,
 				145633ED2A86A03400B75309 /* ViewModel.swift */,
-				145633E92A86957800B75309 /* EventMessenger.swift */,
 				145633EB2A8695F200B75309 /* MainView.swift */,
 				145633DE2A86950A00B75309 /* Assets.xcassets */,
 				145633E02A86950A00B75309 /* LaunchScreen.storyboard */,
@@ -145,9 +145,9 @@
 			files = (
 				145633DA2A86950900B75309 /* ViewController.swift in Sources */,
 				145633D62A86950900B75309 /* AppDelegate.swift in Sources */,
-				145633EA2A86957800B75309 /* EventMessenger.swift in Sources */,
 				145633EC2A8695F200B75309 /* MainView.swift in Sources */,
 				145633EE2A86A03400B75309 /* ViewModel.swift in Sources */,
+				147414A72AA1780A0054C7DA /* NetworkStatus.swift in Sources */,
 				145633D82A86950900B75309 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

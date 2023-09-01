@@ -8,44 +8,37 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject var notifier: EventMessenger
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
-        VStack(spacing: 8.0) {
-            Text("This is the SwiftUI View.")
-
-            Button("Ask UIKit to start async task.", action: {
-                viewModel.asyncDelegate?.didTapAsyncOne()
-            })
-
-            if let taskOneMessage = notifier.taskOneMessage {
-                Text("Task One: \(taskOneMessage)")
+        ZStack {
+            VStack(spacing: 8.0) {
+                Text("This is the SwiftUI View.")
             }
+            .padding()
 
-            Button("Ask UIKit to start another async task.", action: {
-                viewModel.asyncDelegate?.didTapAsyncTwo()
-            })
+            if viewModel.networkBanner != nil {
+                HStack(alignment: .top) {
+                    VStack {
+                        ZStack {
+                            Color.purple
+                            Text("No internet.")
+                                .foregroundColor(.white)
+                        }
+                        .frame(height: 44.0)
 
-            if let taskTwoMessage = notifier.taskTwoMessage {
-                Text("Task Two: \(taskTwoMessage)")
+                        Spacer()
+                    }
+                }
             }
         }
-        .alert(viewModel.alertMessage ?? "Alert",
-               isPresented: $viewModel.displayAlert,
-               presenting: $viewModel.alertMessage,
-               actions: { _ in
-                    Button("OK", action: {})
-               }
-        )
-        .onReceive(notifier.$taskOneMessage, perform: { payload in taskCompleted(payload: payload) })
-        .onReceive(notifier.$taskTwoMessage, perform: { payload in taskCompleted(payload: payload) })
-        .padding()
-    }
-}
-
-extension MainView {
-    func taskCompleted(payload: String?) {
-        viewModel.taskCompleted(payload: payload)
+        .onReceive(viewModel.$networkStatus, perform: { networkStatus in
+            switch(networkStatus) {
+            case .online:
+                viewModel.hideNetworkBanner()
+            case .offline:
+                viewModel.showNetworkBanner()
+            }
+        })
     }
 }

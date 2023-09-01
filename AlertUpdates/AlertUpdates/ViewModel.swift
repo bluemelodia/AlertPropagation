@@ -8,17 +8,21 @@
 import Foundation
 
 class ViewModel: ObservableObject {
-    unowned var asyncDelegate: AsyncDelegate?
+    @Published var networkBanner: String?
+    @Published var networkStatus: NetworkStatus = .online
 
-    @Published var alertMessage: String?
-    @Published var displayAlert: Bool = false
+    public init() {}
 
-    func taskCompleted(payload: String?) {
-        guard let payload else {
-            return
-        }
-        
-        alertMessage = payload
-        displayAlert = true
+    @MainActor public func setNetworkStatus(_ networkStatus: NetworkStatus) {
+        print("Running on thread: \(Thread.current)")
+        self.networkStatus = networkStatus
+    }
+
+    public func showNetworkBanner() {
+        networkBanner = "No internet."
+    }
+
+    public func hideNetworkBanner() {
+        networkBanner = nil
     }
 }
