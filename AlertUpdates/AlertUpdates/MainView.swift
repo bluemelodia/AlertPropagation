@@ -27,6 +27,13 @@ struct MainView: View {
                 }
                 .padding()
 
+                switch viewModel.loadingState {
+                case .idle:
+                    EmptyView()
+                case .loading:
+                    ProgressView()
+                }
+
                 if viewModel.networkBanner != nil {
                     HStack(alignment: .top) {
                         VStack {
@@ -58,8 +65,7 @@ struct MainView: View {
             }
 
             Task {
-                let results = await MusicService().loadData(search: query)
-                viewModel.updateResults(results: results)
+                viewModel.load(search: query)
             }
         })
     }
