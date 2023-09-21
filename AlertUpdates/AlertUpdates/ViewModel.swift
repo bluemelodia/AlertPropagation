@@ -11,6 +11,8 @@ class ViewModel: ObservableObject {
     @Published var networkBanner: String?
     @Published var networkStatus: NetworkStatus = .online
 
+    @Published var results: [Result]?
+
     public init() {}
 
     @MainActor public func setNetworkStatus(_ networkStatus: NetworkStatus) {
@@ -24,5 +26,9 @@ class ViewModel: ObservableObject {
 
     public func hideNetworkBanner() {
         networkBanner = nil
+    }
+
+    @MainActor func updateResults(results: [Result]?) {
+        self.results = results
     }
 }

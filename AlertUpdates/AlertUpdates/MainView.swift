@@ -15,7 +15,15 @@ struct MainView: View {
         NavigationStack {
             ZStack {
                 VStack(spacing: 8.0) {
-                    Text("This is the SwiftUI View.")
+                    ScrollView {
+                        if let results = viewModel.results {
+                            ForEach(results, id: \.trackId) { result in
+                                Song(song: result)
+                            }
+                        } else {
+                            Text("No songs.")
+                        }
+                    }
                 }
                 .padding()
 
@@ -50,8 +58,27 @@ struct MainView: View {
             }
 
             Task {
-                await MusicService().loadData(search: query)
+                let results = await MusicService().loadData(search: query)
+                viewModel.updateResults(results: results)
             }
         })
+    }
+
+    struct Song: View {
+        let song: Result
+
+        var body: some View {
+            VStack(alignment: .leading) {
+                VStack(alignment: .leading) {
+                    Text(song.trackName)
+                        .font(.subheadline)
+                    Text(song.collectionName)
+                        .font(.footnote)
+                }
+                .multilineTextAlignment(.leading)
+
+                Divider()
+            }
+        }
     }
 }
