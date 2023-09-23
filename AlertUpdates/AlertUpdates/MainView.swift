@@ -16,12 +16,12 @@ struct MainView: View {
             ZStack {
                 VStack(spacing: 8.0) {
                     ScrollView {
-                        if let results = viewModel.results {
-                            ForEach(results, id: \.trackId) { result in
-                                Song(song: result)
+                        if let photos = viewModel.photos {
+                            ForEach(photos, id: \.id) { photo in
+                                PhotoView(photo: photo)
                             }
                         } else {
-                            Text("No songs.")
+                            Text("No results found.")
                         }
                     }
                 }
@@ -50,7 +50,7 @@ struct MainView: View {
                 }
             }
         }
-        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search iTunes.")
+        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search Photos.")
         .onReceive(viewModel.$networkStatus, perform: { networkStatus in
             switch(networkStatus) {
             case .online:
@@ -64,22 +64,17 @@ struct MainView: View {
                 return
             }
 
-            Task {
-                viewModel.load(search: query)
-            }
+            viewModel.load(search: query)
         })
     }
 
-    struct Song: View {
-        let song: Result
+    struct PhotoView: View {
+        let photo: Photo
 
         var body: some View {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
-                    Text(song.trackName)
-                        .font(.subheadline)
-                    Text(song.collectionName)
-                        .font(.footnote)
+
                 }
                 .multilineTextAlignment(.leading)
 

@@ -16,10 +16,10 @@ class ViewModel: ObservableObject {
     @Published var networkBanner: String?
     @Published var networkStatus: NetworkStatus = .online
 
-    @Published var results: [Result]?
+    @Published var photos: [Photo]?
     @Published var loadingState: LoadingState = .idle
 
-    private var musicService = MusicService()
+    private var imageService = ImageService()
 
     public init() {}
 
@@ -40,12 +40,12 @@ class ViewModel: ObservableObject {
         loadingState = .loading
 
         Task {
-            self.results = await musicService.loadData(search: search)
+            self.photos = await imageService.loadData(search: search)
             loadingState = .idle
         }
     }
 
-    @MainActor func updateResults(results: [Result]?) {
-        self.results = results
+    @MainActor func updateResults(results: [Photo]?) {
+        self.photos = results
     }
 }
