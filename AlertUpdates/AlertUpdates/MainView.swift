@@ -74,11 +74,43 @@ struct MainView: View {
         var body: some View {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
+                    AsyncImage(url:  URL(string: photo.src.large)) { phase in
+                        switch phase {
+                        case let .success(image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        case .failure:
+                            ErrorView()
+                        default:
+                            PlaceholderView()
+                        }
+                    }
+                    .frame(minWidth: 250, minHeight: 250)
 
+                    Text(photo.photographer)
                 }
                 .multilineTextAlignment(.leading)
 
                 Divider()
+            }
+        }
+    }
+
+    struct PlaceholderView: View {
+        var body: some View {
+            ZStack {
+                Color.gray
+                Image(systemName: "camera.fill")
+            }
+        }
+    }
+
+    struct ErrorView: View {
+        var body: some View {
+            ZStack {
+                Color.gray
+                Image(systemName: "x.circle.fill")
             }
         }
     }
