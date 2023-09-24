@@ -47,11 +47,18 @@ class ViewModel: ObservableObject {
     }
 
     @MainActor func loadContinuation(search: String) {
+        /*
         imageServiceContinuation.loadData(search: search) { photos in
             DispatchQueue.main.async {
                 self.photos = photos
                 self.loadingState = .idle
             }
+        }
+        */
+
+        Task {
+            self.photos = await imageService.loadData(search: search)
+            loadingState = .idle
         }
     }
 

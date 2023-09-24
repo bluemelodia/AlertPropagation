@@ -12,7 +12,15 @@ import Foundation
 struct ImageServiceContinuation {
     private let baseURL = "https://api.pexels.com/v1/search?query="
 
-    func loadData(search: String, completion: @escaping ([Photo]?) -> Void) {
+    public func loadData(search: String) async -> [Photo]? {
+        return await withCheckedContinuation { continuation in
+            loadData(search: search) { photos in
+                continuation.resume(returning: photos)
+            }
+        }
+    }
+
+    private func loadData(search: String, completion: @escaping ([Photo]?) -> Void) {
         let searchTerm = search.components(separatedBy: " ").joined(separator: "+")
         let url = "\(baseURL)\(searchTerm)&per_page=25"
 
