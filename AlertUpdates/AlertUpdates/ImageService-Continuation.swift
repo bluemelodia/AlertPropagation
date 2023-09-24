@@ -13,6 +13,8 @@ struct ImageServiceContinuation {
     private let baseURL = "https://api.pexels.com/v1/search?query="
 
     public func loadData(search: String) async -> [Photo]? {
+        /// Wrapper that acts as a bridge that allows us to invoke older functions that use a
+        /// completion handler from async code.
         return await withCheckedContinuation { continuation in
             loadData(search: search) { photos in
                 continuation.resume(returning: photos)

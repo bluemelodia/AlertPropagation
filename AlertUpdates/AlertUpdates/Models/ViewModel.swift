@@ -57,7 +57,7 @@ class ViewModel: ObservableObject {
         */
 
         Task {
-            self.photos = await imageService.loadData(search: search)
+            self.photos = await imageServiceContinuation.loadData(search: search)
             loadingState = .idle
         }
     }
