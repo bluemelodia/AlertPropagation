@@ -1,40 +1,42 @@
 //
-//  Service.swift
+//  ImageService-Continuation.swift
 //  AlertUpdates
 //
-//  Created by Guac on 9/20/23.
+//  Created by Guac on 9/24/23.
 //
+
+// Alterate version of ImageService that uses completion handlers. 
 
 import Foundation
 
-struct ImageService {
+struct ImageServiceContinuation {
     private let baseURL = "https://api.pexels.com/v1/search?query="
 
-    func loadData(search: String) async -> [Photo]? {
-        var results: [Photo]?
+    func loadData(search: String, completion: @escaping ([Photo]?) -> Void) {
         let searchTerm = search.components(separatedBy: " ").joined(separator: "+")
         let url = "\(baseURL)\(searchTerm)&per_page=25"
 
         guard let url = URL(string: url) else {
             print("Invalid URL: \(url)")
-            return results
+            completion([])
+            return
         }
 
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue(Keys.pexels, forHTTPHeaderField: "Authorization")
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
 
-        do {
-            let (data, _) = try await URLSession.shared.data(for: urlRequest)
+        URLSession.shared.dataTask(with: urlRequest) { data, _, error in
+            guard let data else {
+                completion([])
+                return
+            }
 
             if let decodedData = try? JSONDecoder().decode(Photos.self, from: data) {
-                results = decodedData.photos
+                completion(decodedData.photos)
+            } else {
+                completion([])
             }
-        } catch {
-            print("Invalid data: \(error.localizedDescription)")
-        }
-
-        return results
+        }.resume()
     }
 }
-

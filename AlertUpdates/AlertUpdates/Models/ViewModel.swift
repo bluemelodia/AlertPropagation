@@ -20,6 +20,7 @@ class ViewModel: ObservableObject {
     @Published var loadingState: LoadingState = .idle
 
     private var imageService = ImageService()
+    private var imageServiceContinuation = ImageServiceContinuation()
 
     public init() {}
 
@@ -42,6 +43,15 @@ class ViewModel: ObservableObject {
         Task {
             self.photos = await imageService.loadData(search: search)
             loadingState = .idle
+        }
+    }
+
+    @MainActor func loadContinuation(search: String) {
+        imageServiceContinuation.loadData(search: search) { photos in
+            DispatchQueue.main.async {
+                self.photos = photos
+                self.loadingState = .idle
+            }
         }
     }
 
