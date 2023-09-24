@@ -65,7 +65,6 @@ struct MainView: View {
             }
 
             viewModel.load(search: query)
-            // viewModel.loadContinuation(search: query)
         })
     }
 

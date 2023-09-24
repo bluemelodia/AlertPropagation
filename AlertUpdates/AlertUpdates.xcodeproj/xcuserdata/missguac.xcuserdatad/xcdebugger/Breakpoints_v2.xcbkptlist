@@ -320,5 +320,255 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97E2800C-F7E1-4CF4-9ECC-B8A6FDC4AFE3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlertUpdates/ImageService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "loadData(search:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "97E2800C-F7E1-4CF4-9ECC-B8A6FDC4AFE3 - b548ae3d0468ac98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for AlertUpdates.ImageService.loadData(search: Swift.String) async -&gt; Swift.Optional&lt;Swift.Array&lt;AlertUpdates.Photo&gt;&gt;"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/ImageService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "1276">
+               </Location>
+               <Location
+                  uuid = "97E2800C-F7E1-4CF4-9ECC-B8A6FDC4AFE3 - 1185886eff98d07a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for AlertUpdates.ImageService.loadData(search: Swift.String) async -&gt; Swift.Optional&lt;Swift.Array&lt;AlertUpdates.Photo&gt;&gt;"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/ImageService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "97E2800C-F7E1-4CF4-9ECC-B8A6FDC4AFE3 - 64d11a6a207689a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for AlertUpdates.ImageService.loadData(search: Swift.String) async -&gt; Swift.Optional&lt;Swift.Array&lt;AlertUpdates.Photo&gt;&gt;"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/ImageService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "97E2800C-F7E1-4CF4-9ECC-B8A6FDC4AFE3 - deccbcd4f312c69b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for AlertUpdates.ImageService.loadData(search: Swift.String) async -&gt; Swift.Optional&lt;Swift.Array&lt;AlertUpdates.Photo&gt;&gt;"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/ImageService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2E75F89-9572-4105-8DF1-D9BA1973BBC2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlertUpdates/ImageService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "loadData(search:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F66103A-596B-42BB-A8D1-E7DC398394FB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlertUpdates/Models/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "load(search:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1F66103A-596B-42BB-A8D1-E7DC398394FB - d8b8504267894f56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlertUpdates.ViewModel.load(search: Swift.String) -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "1F66103A-596B-42BB-A8D1-E7DC398394FB - c50c46bc79ff103e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; () in AlertUpdates.ViewModel.load(search: Swift.String) -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "1F66103A-596B-42BB-A8D1-E7DC398394FB - 4e76708601402cf1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AlertUpdates.ViewModel.load(search: Swift.String) -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "1F66103A-596B-42BB-A8D1-E7DC398394FB - 4e76708601402cf1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AlertUpdates.ViewModel.load(search: Swift.String) -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "1F66103A-596B-42BB-A8D1-E7DC398394FB - e122f025db511ff0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in AlertUpdates.ViewModel.load(search: Swift.String) -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "1F66103A-596B-42BB-A8D1-E7DC398394FB - 34fe7f8c1d7af177"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AlertUpdates.ViewModel.load(search: Swift.String) -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "422918FD-D7B0-415F-99B4-3AE793D49717"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlertUpdates/Models/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "load(search:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "422918FD-D7B0-415F-99B4-3AE793D49717 - d8b8504267894f08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlertUpdates.ViewModel.load(search: Swift.String) -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "422918FD-D7B0-415F-99B4-3AE793D49717 - d8b8504267894feb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlertUpdates.ViewModel.load(search: Swift.String) -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "136">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
