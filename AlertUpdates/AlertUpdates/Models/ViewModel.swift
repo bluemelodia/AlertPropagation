@@ -50,6 +50,8 @@ class ViewModel: ObservableObject {
     @MainActor func loadImages(search: String) {
         loadingState = .loading
 
+        // async let implementation
+        /*
         Task {
             let collection = await loadImages(search: search)
             var images: [Photo] = []
@@ -59,6 +61,36 @@ class ViewModel: ObservableObject {
             self.photos = images
             loadingState = .idle
         }
+        */
+
+        // task group implementation
+        Task {
+            do {
+                self.photos = try await loadImageGroup(search: search)
+            } catch {
+                self.photos = []
+            }
+        }
+    }
+
+    func loadImageGroup(search: String) async throws -> [Photo] {
+        var images: [Photo] = []
+
+        try await withThrowingTaskGroup(of: [Photo]?.self, body: { group in
+            group.addTask {
+                await self.imageService.loadData(search: search, curated: true)
+            }
+
+            group.addTask {
+                await self.imageService.loadData(search: search)
+            }
+
+            for try await image in group {
+                images.append(contentsOf: image ?? [])
+            }
+        })
+
+        return images
     }
 
     func loadImages(search: String) async -> (curated: [Photo]?, images: [Photo]?) {
