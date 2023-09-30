@@ -9,11 +9,16 @@ import Foundation
 
 struct ImageService {
     private let baseURL = "https://api.pexels.com/v1/search?query="
+    private let curatedURL = "https://api.pexels.com/v1/curated?per_page=1"
 
-    func loadData(search: String) async -> [Photo]? {
+    func loadData(search: String, curated: Bool = false) async -> [Photo]? {
         var results: [Photo]?
-        let searchTerm = search.components(separatedBy: " ").joined(separator: "+")
-        let url = "\(baseURL)\(searchTerm)&per_page=25"
+        var url: String = curatedURL
+
+        if !curated {
+            let searchTerm = search.components(separatedBy: " ").joined(separator: "+")
+            url = "\(baseURL)\(searchTerm)&per_page=25"
+        }
 
         guard let url = URL(string: url) else {
             print("Invalid URL: \(url)")

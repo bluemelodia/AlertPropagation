@@ -7,7 +7,7 @@
 
 import Foundation
 
-let response = """
+let images = """
 {
   "total_results": 10000,
   "page": 1,

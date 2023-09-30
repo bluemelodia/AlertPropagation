@@ -17,6 +17,7 @@ class ViewModel: ObservableObject {
     @Published var networkStatus: NetworkStatus = .online
 
     @Published var photos: [Photo]?
+    @Published var images: [Photo]?
     @Published var loadingState: LoadingState = .idle
 
     private var imageService = ImageService()
@@ -37,13 +38,34 @@ class ViewModel: ObservableObject {
         networkBanner = nil
     }
 
-    @MainActor func load(search: String) {
+    @MainActor func loadPhotos(search: String) {
         loadingState = .loading
 
         Task {
             self.photos = await imageService.loadData(search: search)
             loadingState = .idle
         }
+    }
+
+    @MainActor func loadImages(search: String) {
+        loadingState = .loading
+
+        Task {
+            let collection = await loadImages(search: search)
+            var images: [Photo] = []
+            images.append(contentsOf: collection.curated ?? [])
+            images.append(contentsOf: collection.images ?? [])
+
+            self.photos = images
+            loadingState = .idle
+        }
+    }
+
+    func loadImages(search: String) async -> (curated: [Photo]?, images: [Photo]?) {
+        async let curated = imageService.loadData(search: search, curated: true)
+        async let images = imageService.loadData(search: search)
+
+        return (await curated, await images)
     }
 
     @MainActor func loadContinuation(search: String) {

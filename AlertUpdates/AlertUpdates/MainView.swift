@@ -50,7 +50,7 @@ struct MainView: View {
                 }
             }
         }
-        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search Photos.")
+        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search photos and videos.")
         .onReceive(viewModel.$networkStatus, perform: { networkStatus in
             switch(networkStatus) {
             case .online:
@@ -64,7 +64,8 @@ struct MainView: View {
                 return
             }
 
-            viewModel.load(search: query)
+            // viewModel.loadPhotos(search: query)
+            viewModel.loadImages(search: query)
             // viewModel.loadContinuation(search: query)
         })
     }
