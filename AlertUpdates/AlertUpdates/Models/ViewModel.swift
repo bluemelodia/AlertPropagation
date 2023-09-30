@@ -38,6 +38,8 @@ class ViewModel: ObservableObject {
         networkBanner = nil
     }
 
+    // MARK: Structured
+
     @MainActor func loadPhotos(search: String) {
         loadingState = .loading
 

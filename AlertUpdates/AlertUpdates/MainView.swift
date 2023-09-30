@@ -73,22 +73,57 @@ struct MainView: View {
     struct PhotoView: View {
         let photo: Photo
 
+        @State var image: UIImage? = nil
+        @State var downloadButton: String = "Download"
+        @State var downloadTask: Task<UIImage?, Never>? {
+            didSet {
+                if downloadTask == nil {
+                    downloadButton = "Download"
+                } else {
+                    downloadButton = "Cancel"
+                }
+            }
+        }
+
+        func downloadAndShowImage() {
+            guard let url = URL(string: photo.src.large) else {
+                print("Invalid URL")
+                return
+            }
+
+            downloadTask = Task.init {
+                do {
+                    let data = try Data(contentsOf: url)
+                    return UIImage(data: data)
+                } catch {
+                    return nil
+                }
+            }
+        }
+
         var body: some View {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
-                    AsyncImage(url:  URL(string: photo.src.large)) { phase in
-                        switch phase {
-                        case let .success(image):
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                        case .failure:
-                            ErrorView()
-                        default:
-                            PlaceholderView()
+                    if let image {
+                        Image(uiImage: image)
+                            .frame(minWidth: 250, minHeight: 250)
+                    } else {
+                        VStack {
+                            Button(downloadButton) {
+                                if downloadTask == nil {
+                                    self.downloadAndShowImage()
+
+                                    Task {
+                                        if let image = await downloadTask?.value {
+                                            self.image = image
+                                        }
+                                    }
+                                } else {
+                                    downloadTask?.cancel()
+                                }
+                            }
                         }
                     }
-                    .frame(minWidth: 250, minHeight: 250)
 
                     Text(photo.photographer)
                 }
