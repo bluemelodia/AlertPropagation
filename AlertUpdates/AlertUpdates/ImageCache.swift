@@ -16,7 +16,15 @@ actor ImageCache {
 
     var cache: [URL : ImageStatus] = [:];
 
-    func downloadImage(url: URL) async -> UIImage? {
+    func executeDownload(url: URL, downloader: @Sendable (URL) async -> UIImage?) async -> UIImage? {
+        await downloader(url)
+    }
+
+    func clearCache() {
+        cache.removeAll()
+    }
+
+    @Sendable func downloadImage(url: URL) async -> UIImage? {
         if let cached = cache[url] {
             switch cached {
             case let .downloading(task):

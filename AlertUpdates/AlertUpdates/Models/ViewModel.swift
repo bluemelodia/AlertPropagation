@@ -42,8 +42,58 @@ class ViewModel: ObservableObject {
 
     // MARK: Actor
 
+    @Sendable func executeDownload(url: URL) async -> UIImage? {
+        let task = Task.init {
+            do {
+                let data = try Data(contentsOf: url)
+                return UIImage(data: data)
+            } catch {
+                return nil
+            }
+        }
+
+        // You have to use await here since this is a non-isolated
+        // closure - it runs outside of the actor.
+        // imageCache.downloadImage(url: url)
+        // imageCache.clearCache()
+
+        if let image = await task.value {
+            return image
+        } else {
+            return nil
+        }
+    }
+
     func loadImage(url: URL) async -> UIImage? {
-        return await imageCache.downloadImage(url: url)
+        // Can't do this unless you mark downloadImage as @Sendable:
+        // Converting non-sendable function value to
+        // '@Sendable (URL) async -> UIImage' may introduce data races
+        // return await imageCache.executeDownload(url: url, downloader: imageCache.downloadImage(url:))
+
+        return await imageCache.executeDownload(url: url, downloader: executeDownload(url:))
+
+        return await imageCache.executeDownload(url: url) { url in
+            let task = Task.init {
+                do {
+                    let data = try Data(contentsOf: url)
+                    return UIImage(data: data)
+                } catch {
+                    return nil
+                }
+            }
+
+            // You have to use await here since this is a non-isolated
+            // closure - it runs outside of the actor.
+            // imageCache.downloadImage(url: url)
+
+            if let image = await task.value {
+                return image
+            } else {
+                return nil
+            }
+        }
+
+        // return await imageCache.downloadImage(url: url)
     }
 
     // MARK: Structured
