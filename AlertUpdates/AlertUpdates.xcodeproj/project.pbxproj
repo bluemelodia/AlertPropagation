@@ -22,6 +22,7 @@
 		14C9C24B2AC07461003C53CD /* ImageService-Continuation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C24A2AC07461003C53CD /* ImageService-Continuation.swift */; };
 		14C9C24F2AC73236003C53CD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C24E2AC73236003C53CD /* Video.swift */; };
 		14C9C2512AC73257003C53CD /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C2502AC73257003C53CD /* Videos.swift */; };
+		14C9C2532AC9CCA8003C53CD /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C2522AC9CCA8003C53CD /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		14C9C24A2AC07461003C53CD /* ImageService-Continuation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageService-Continuation.swift"; sourceTree = "<group>"; };
 		14C9C24E2AC73236003C53CD /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		14C9C2502AC73257003C53CD /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
+		14C9C2522AC9CCA8003C53CD /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				145633D52A86950900B75309 /* AppDelegate.swift */,
 				14C9C23C2ABBD241003C53CD /* ImageService.swift */,
 				14C9C24A2AC07461003C53CD /* ImageService-Continuation.swift */,
+				14C9C2522AC9CCA8003C53CD /* ImageCache.swift */,
 				14C9C2452ABF2911003C53CD /* Models */,
 				14C9C2412ABF28D4003C53CD /* Stubs */,
 				14C9C2402ABF24A1003C53CD /* Secrets */,
@@ -200,6 +203,7 @@
 				14C9C24F2AC73236003C53CD /* Video.swift in Sources */,
 				147414A72AA1780A0054C7DA /* NetworkStatus.swift in Sources */,
 				145633D82A86950900B75309 /* SceneDelegate.swift in Sources */,
+				14C9C2532AC9CCA8003C53CD /* ImageCache.swift in Sources */,
 				14C9C2472ABF2928003C53CD /* ReferenceImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

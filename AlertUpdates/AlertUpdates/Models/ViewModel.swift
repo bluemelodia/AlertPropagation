@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI 
 
 enum LoadingState {
     case idle
@@ -20,6 +21,7 @@ class ViewModel: ObservableObject {
     @Published var images: [Photo]?
     @Published var loadingState: LoadingState = .idle
 
+    private var imageCache = ImageCache()
     private var imageService = ImageService()
     private var imageServiceContinuation = ImageServiceContinuation()
 
@@ -36,6 +38,12 @@ class ViewModel: ObservableObject {
 
     public func hideNetworkBanner() {
         networkBanner = nil
+    }
+
+    // MARK: Actor
+
+    func loadImage(url: URL) async -> UIImage? {
+        return await imageCache.downloadImage(url: url)
     }
 
     // MARK: Structured

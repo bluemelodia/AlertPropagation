@@ -18,7 +18,7 @@ struct MainView: View {
                     ScrollView {
                         if let photos = viewModel.photos {
                             ForEach(photos, id: \.id) { photo in
-                                PhotoView(photo: photo)
+                                PhotoView(photo: photo, viewModel: viewModel)
                             }
                         } else {
                             Text("No results found.")
@@ -71,6 +71,42 @@ struct MainView: View {
     }
 
     struct PhotoView: View {
+        let photo: Photo
+        let viewModel: ViewModel
+
+        @State var image: UIImage? = nil
+        @State var downloadButton: String = "Download"
+
+        var body: some View {
+            VStack(alignment: .leading) {
+                VStack(alignment: .leading) {
+                    if let image {
+                        Image(uiImage: image)
+                            .frame(minWidth: 250, minHeight: 250)
+                    } else {
+                        VStack {
+                            Button(downloadButton) {
+                                guard let url = URL(string: photo.src.large) else {
+                                    return
+                                }
+
+                                Task {
+                                    self.image = await viewModel.loadImage(url: url)
+                                }
+                            }
+                        }
+                    }
+
+                    Text(photo.photographer)
+                }
+                .multilineTextAlignment(.leading)
+
+                Divider()
+            }
+        }
+    }
+
+    struct PhotoViewTask: View {
         let photo: Photo
 
         @State var image: UIImage? = nil
