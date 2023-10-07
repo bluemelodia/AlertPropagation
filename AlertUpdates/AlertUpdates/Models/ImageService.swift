@@ -1,11 +1,12 @@
 //
-//  Service.swift
+//  ImageManageable.swift
 //  AlertUpdates
 //
 //  Created by Guac on 9/20/23.
 //
 
 import Foundation
+import UIKit
 
 extension ViewModel: ImageManageable {
     func searchImages(search: String) {
@@ -42,6 +43,23 @@ extension ViewModel: ImageManageable {
             }
         } catch {
             return .failure(error: .invalidData(errorMessage: error.localizedDescription))
+        }
+    }
+
+    func downloadImage(url: String) async -> DownloadImageResult {
+        guard let url = URL(string: url) else {
+            return .failure(error: .invalidURL)
+        }
+
+        do {
+            let data = try Data(contentsOf: url)
+            if let image = UIImage(data: data) {
+                return .success(image: image)
+            } else {
+                return .failure(error: .imageCreationError)
+            }
+        } catch {
+            return .failure(error: .dataError)
         }
     }
 }

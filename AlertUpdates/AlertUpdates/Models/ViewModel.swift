@@ -33,7 +33,20 @@ class ViewModel: ObservableObject {
     }
 
     func selectImage(imageType: ImageType, url: String) {
-        
+        Task {
+            switch(imageType) {
+            case .background:
+                await imageManager?.selectBackgroundImage(url: url)
+            case .profile:
+                await imageManager?.selectProfileImage(url: url)
+            }
+        }
+    }
+
+    func commitChanges() {
+        Task {
+            await imageManager?.commitChanges()
+        }
     }
 
     @MainActor func updateResults(results: [Photo]?) {

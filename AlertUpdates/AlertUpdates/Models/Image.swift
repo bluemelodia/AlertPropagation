@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ImageType {
     case profile
@@ -21,4 +22,22 @@ enum FetchImagesError: Error {
 enum FetchImagesResult {
     case success(photos: [Photo])
     case failure(error: FetchImagesError)
+}
+
+enum DownloadImageStatus {
+    case downloading
+    case downloaded
+    case failure
+    case notDownloaded
+}
+
+enum DownloadImageError: Error {
+    case dataError
+    case imageCreationError
+    case invalidURL
+}
+
+enum DownloadImageResult {
+    case success(image: UIImage)
+    case failure(error: DownloadImageError)
 }

@@ -72,7 +72,6 @@
 			children = (
 				145633D52A86950900B75309 /* AppDelegate.swift */,
 				14C9C2562AD1964E003C53CD /* ImageManager.swift */,
-				14C9C23C2ABBD241003C53CD /* ImageService.swift */,
 				14C9C2452ABF2911003C53CD /* Models */,
 				14C9C2412ABF28D4003C53CD /* Stubs */,
 				14C9C2402ABF24A1003C53CD /* Secrets */,
@@ -105,6 +104,7 @@
 		14C9C2452ABF2911003C53CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				14C9C23C2ABBD241003C53CD /* ImageService.swift */,
 				145633ED2A86A03400B75309 /* ViewModel.swift */,
 				14C9C2462ABF2928003C53CD /* ReferenceImage.swift */,
 				14C9C2582AD19954003C53CD /* Image.swift */,
