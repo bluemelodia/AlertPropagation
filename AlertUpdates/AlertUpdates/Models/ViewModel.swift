@@ -17,17 +17,22 @@ class ViewModel: ObservableObject {
     @Published var photos: [Photo]?
     @Published var errorMessage: String?
     @Published var loadingState: LoadingState = .idle
+    @Published var imageManager: ImageManager?
 
-    lazy var imageManager: ImageManager = {
-        ImageManager(imageManageable: self)
-    }()
+//    lazy var imageManager: ImageManager = {
+//        ImageManager(imageManageable: self)
+//    }()
+
+    init() {
+        self.imageManager = ImageManager(imageManageable: self)
+    }
 
     @MainActor var backgroundImage: UIImage? {
-        imageManager.backgroundImage
+        imageManager?.backgroundImage
     }
 
     @MainActor var profileImage: UIImage? {
-        imageManager.profileImage
+        imageManager?.profileImage
     }
 
     func selectImage(imageType: ImageType, url: String) {
@@ -35,17 +40,17 @@ class ViewModel: ObservableObject {
             switch(imageType) {
             case .background:
                 print("===> ViewModel: request to download background image")
-                await imageManager.selectBackgroundImage(url: url)
+                await imageManager?.selectBackgroundImage(url: url)
             case .profile:
                 print("===> ViewModel: request to download profile image")
-                await imageManager.selectProfileImage(url: url)
+                await imageManager?.selectProfileImage(url: url)
             }
         }
     }
 
     func commitChanges() {
         Task {
-            await imageManager.updateProfile()
+            await imageManager?.updateProfile()
         }
     }
 

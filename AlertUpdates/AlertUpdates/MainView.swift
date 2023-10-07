@@ -12,11 +12,11 @@ struct MainView: View {
     @State private var searchText = ""
 
     var profileImage: UIImage? {
-        viewModel.profileImage
+        viewModel.imageManager?.profileImage
     }
 
     var backgroundImage: UIImage? {
-        viewModel.backgroundImage
+        viewModel.imageManager?.backgroundImage
     }
 
     var body: some View {
@@ -59,10 +59,10 @@ struct MainView: View {
             }
         }
         .onChange(of: viewModel.backgroundImage) { image in
-            print("===> MainView: background image changed: \(image)")
+            print("===> MainView: background image changed")
         }
         .onChange(of: viewModel.profileImage) { image in
-            print("===> MainView: profile image changed: \(image)")
+            print("===> MainView: profile image changed")
         }
     }
 

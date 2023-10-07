@@ -15,8 +15,8 @@ protocol ImageManageable {
 }
 
 actor ImageManager: ObservableObject {
-    @MainActor private(set) var backgroundImage: UIImage?
-    @MainActor private(set) var profileImage: UIImage?
+    @Published @MainActor private(set) var backgroundImage: UIImage?
+    @Published @MainActor private(set) var profileImage: UIImage?
 
     let imageManagable: ImageManageable
 

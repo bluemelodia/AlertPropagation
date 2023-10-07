@@ -516,57 +516,10 @@
             filePath = "AlertUpdates/Models/ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "selectImage(imageType:url:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3502F50A-0884-43DD-809C-035BBC65EB9A - 5b82586c322661c7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AlertUpdates.ViewModel.selectImage(imageType: AlertUpdates.ImageType, url: Swift.String) -&gt; ()"
-                  moduleName = "AlertUpdates"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "284">
-               </Location>
-               <Location
-                  uuid = "3502F50A-0884-43DD-809C-035BBC65EB9A - b602952b83260a96"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in AlertUpdates.ViewModel.selectImage(imageType: AlertUpdates.ImageType, url: Swift.String) -&gt; ()"
-                  moduleName = "AlertUpdates"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "3502F50A-0884-43DD-809C-035BBC65EB9A - 13f7c104008965c9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AlertUpdates.ViewModel.selectImage(imageType: AlertUpdates.ImageType, url: Swift.String) -&gt; ()"
-                  moduleName = "AlertUpdates"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
