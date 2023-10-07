@@ -24,15 +24,18 @@ class ViewModel: ObservableObject {
 //    }()
 
     init() {
+        print("===> ViewModel: initialize the image manager")
         self.imageManager = ImageManager(imageManageable: self)
     }
 
     @MainActor var backgroundImage: UIImage? {
-        imageManager?.backgroundImage
+        print("===> ViewModel: background image changed")
+        return imageManager?.backgroundImage
     }
 
     @MainActor var profileImage: UIImage? {
-        imageManager?.profileImage
+        print("===> ViewModel: profile image changed")
+        return imageManager?.profileImage
     }
 
     func selectImage(imageType: ImageType, url: String) {

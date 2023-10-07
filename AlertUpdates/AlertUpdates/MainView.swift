@@ -11,21 +11,13 @@ struct MainView: View {
     @ObservedObject var viewModel: ViewModel
     @State private var searchText = ""
 
-    var profileImage: UIImage? {
-        viewModel.imageManager?.profileImage
-    }
-
-    var backgroundImage: UIImage? {
-        viewModel.imageManager?.backgroundImage
-    }
-
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack(spacing: 8.0) {
                     BannerView(
-                        profileImage: profileImage,
-                        backgroundImage: backgroundImage,
+                        profileImage: viewModel.profileImage,
+                        backgroundImage: viewModel.backgroundImage,
                         tapHandler: viewModel.commitChanges
                     )
                     ScrollView {
@@ -59,17 +51,17 @@ struct MainView: View {
             }
         }
         .onChange(of: viewModel.backgroundImage) { image in
-            print("===> MainView: background image changed")
+            print("===> MainView: background image changed: \(image)")
         }
         .onChange(of: viewModel.profileImage) { image in
-            print("===> MainView: profile image changed")
+            print("===> MainView: profile image changed: \(image)")
         }
     }
 
     struct BannerView: View {
-        let profileImage: UIImage?
-        let backgroundImage: UIImage?
-        let tapHandler: () -> Void
+        @State var profileImage: UIImage?
+        @State var backgroundImage: UIImage?
+        @State var tapHandler: () -> Void
 
         var body: some View {
             ZStack {

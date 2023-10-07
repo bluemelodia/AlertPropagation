@@ -36,15 +36,11 @@ actor ImageManager: ObservableObject {
 
     func selectBackgroundImage(url: String) async {
         await updateBackgroundImage(image: UIImage(systemName: "ellipsis.circle.fill")!)
-
-        backgroundImageURL = url
         downloadBackgroundImage(url: url)
     }
 
     func selectProfileImage(url: String) async {
         await updateProfileImage(image: UIImage(systemName: "ellipsis.circle.fill")!)
-
-        profileImageURL = url
         downloadProfileImage(url: url)
     }
 
@@ -68,25 +64,25 @@ actor ImageManager: ObservableObject {
     @MainActor private func updateProfileImage(image: UIImage) {
         print("===> ImageManager: updateProfileImage")
         profileImage = image
-        objectWillChange.send()
     }
 
     @MainActor private func updateBackgroundImage(image: UIImage) {
         print("===> ImageManager: updateBackgroundImage")
         backgroundImage = image
-        objectWillChange.send()
     }
 }
 
 /// Download tasks
 extension ImageManager {
     private func downloadBackgroundImage(url: String) {
+        self.backgroundImageURL = url
         backgroundImageTask?.cancel()
         updateImageDownloadStatus(imageType: .background, status: .downloading)
         backgroundImageTask = createDownloadImageTask(imageType: .background, url: url)
     }
 
     private func downloadProfileImage(url: String) {
+        self.profileImageURL = url
         profileImageTask?.cancel()
         updateImageDownloadStatus(imageType: .profile, status: .downloading)
         profileImageTask = createDownloadImageTask(imageType: .profile, url: url)
