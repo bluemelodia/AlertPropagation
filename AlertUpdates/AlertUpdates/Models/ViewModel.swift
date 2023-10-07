@@ -18,13 +18,21 @@ class ViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var loadingState: LoadingState = .idle
 
+    @MainActor var profileImage: UIImage? {
+        imageManager?.profileImage
+    }
+
+    @MainActor var backgroundImage: UIImage? {
+        imageManager?.backgroundImage
+    }
+
     private var imageManager: ImageManager?
 
     public init() {
         self.imageManager = ImageManager(imageManageable: self)
     }
 
-    func selectImage(imageType: ImageType) {
+    func selectImage(imageType: ImageType, url: String) {
         
     }
 

@@ -15,6 +15,7 @@ struct MainView: View {
         NavigationStack {
             ZStack {
                 VStack(spacing: 8.0) {
+                    BannerView(profileImage: viewModel.profileImage, backgroundImage: viewModel.backgroundImage)
                     ScrollView {
                         if let photos = viewModel.photos {
                             ForEach(photos, id: \.id) { photo in
@@ -26,6 +27,14 @@ struct MainView: View {
                             Text("No results found.")
                         }
                     }
+                    .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search photos and videos.")
+                    .onChange(of: searchText, perform: { query in
+                        if query.isEmpty {
+                            return
+                        }
+
+                        viewModel.searchImages(search: query)
+                    })
                 }
                 .padding()
 
@@ -37,112 +46,43 @@ struct MainView: View {
                 }
             }
         }
-        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search photos and videos.")
-        .onChange(of: searchText, perform: { query in
-            if query.isEmpty {
-                return
-            }
-
-            viewModel.searchImages(search: query)
-        })
     }
 
-    struct PhotoView: View {
-        let photo: Photo
-        let viewModel: ViewModel
-
-        @State var image: UIImage? = nil
-        @State var downloadButton: String = "Download"
+    struct BannerView: View {
+        let profileImage: UIImage?
+        let backgroundImage: UIImage?
 
         var body: some View {
-            VStack(alignment: .leading) {
-                VStack(alignment: .leading) {
-                    if let image {
-                        Image(uiImage: image)
-                            .frame(minWidth: 250, minHeight: 250)
-                    } else {
-                        VStack {
-                            Button(downloadButton) {
-                                guard let url = URL(string: photo.src.large) else {
-                                    return
-                                }
-
-                                Task {
-                                    //self.image = await viewModel.loadImage(url: url)
-                                }
-                            }
-                        }
-                    }
-
-                    Text(photo.photographer)
+            ZStack {
+                backgroundImageView()
+                HStack(alignment: .center) {
+                    profileImageView()
+                        .border(Color.black, width: 1.0)
+                        .frame(width: 100, height: 100)
+                    Spacer()
                 }
-                .multilineTextAlignment(.leading)
-
-                Divider()
+                .padding(.leading, 10)
             }
+            .frame(maxHeight: 120)
         }
-    }
 
-    struct PhotoViewTask: View {
-        let photo: Photo
-
-        @State var image: UIImage? = nil
-        @State var downloadButton: String = "Download"
-        @State var downloadTask: Task<UIImage?, Never>? {
-            didSet {
-                if downloadTask == nil {
-                    downloadButton = "Download"
+        func backgroundImageView() -> some View {
+            VStack {
+                if let backgroundImage {
+                    Image(uiImage: backgroundImage)
                 } else {
-                    downloadButton = "Cancel"
+                    Color.gray
                 }
             }
         }
 
-        func downloadAndShowImage() {
-            guard let url = URL(string: photo.src.large) else {
-                print("Invalid URL")
-                return
-            }
-
-            downloadTask = Task.init {
-                do {
-                    let data = try Data(contentsOf: url)
-                    return UIImage(data: data)
-                } catch {
-                    return nil
+        func profileImageView() -> some View {
+            VStack {
+                if let profileImage {
+                    Image(uiImage: profileImage)
+                } else {
+                    PlaceholderView()
                 }
-            }
-        }
-
-        var body: some View {
-            VStack(alignment: .leading) {
-                VStack(alignment: .leading) {
-                    if let image {
-                        Image(uiImage: image)
-                            .frame(minWidth: 250, minHeight: 250)
-                    } else {
-                        VStack {
-                            Button(downloadButton) {
-                                if downloadTask == nil {
-                                    self.downloadAndShowImage()
-
-                                    Task {
-                                        if let image = await downloadTask?.value {
-                                            self.image = image
-                                        }
-                                    }
-                                } else {
-                                    downloadTask?.cancel()
-                                }
-                            }
-                        }
-                    }
-
-                    Text(photo.photographer)
-                }
-                .multilineTextAlignment(.leading)
-
-                Divider()
             }
         }
     }
@@ -156,11 +96,31 @@ struct MainView: View {
         }
     }
 
-    struct ErrorView: View {
+    struct PhotoView: View {
+        let photo: Photo
+        let viewModel: ViewModel
+
+        @State var makeProfileButton: String = "Set Profile"
+        @State var makeBackgroundButton: String = "Set Background"
+
         var body: some View {
-            ZStack {
-                Color.gray
-                Image(systemName: "x.circle.fill")
+            VStack(alignment: .leading) {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Button(makeBackgroundButton) {
+                            viewModel.selectImage(imageType: .background, url: photo.src.large)
+                        }
+
+                        Button(makeProfileButton) {
+                            viewModel.selectImage(imageType: .profile, url: photo.src.large)
+                        }
+                    }
+
+                    Text(photo.photographer)
+                }
+                .multilineTextAlignment(.leading)
+
+                Divider()
             }
         }
     }

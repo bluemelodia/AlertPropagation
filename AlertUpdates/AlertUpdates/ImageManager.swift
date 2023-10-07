@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ImageManageable {
     //func downloadImage(search: String) async -> FetchImagesResult
 }
 
 actor ImageManager: ObservableObject {
-    @MainActor var profileImage: String?
-    @MainActor var backgroundImage: String?
+    @MainActor var profileImage: UIImage?
+    @MainActor var backgroundImage: UIImage?
 
     let imageManagable: ImageManageable
 
