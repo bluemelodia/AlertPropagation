@@ -16,10 +16,9 @@ struct MainView: View {
             ZStack {
                 VStack(spacing: 8.0) {
                     BannerView(
-                        profileImage: viewModel.profileImage,
-                        backgroundImage: viewModel.backgroundImage,
-                        tapHandler: viewModel.commitChanges
+                        viewModel: viewModel
                     )
+
                     ScrollView {
                         if let photos = viewModel.photos {
                             ForEach(photos, id: \.id) { photo in
@@ -59,9 +58,7 @@ struct MainView: View {
     }
 
     struct BannerView: View {
-        @State var profileImage: UIImage?
-        @State var backgroundImage: UIImage?
-        @State var tapHandler: () -> Void
+        @ObservedObject var viewModel: ViewModel
 
         var body: some View {
             ZStack {
@@ -77,7 +74,7 @@ struct MainView: View {
                 HStack(alignment: .center) {
                     Spacer()
                     Button("Update") {
-                        tapHandler()
+                        viewModel.commitChanges()
                     }
                 }
                 .padding(.trailing, 10)
@@ -87,7 +84,7 @@ struct MainView: View {
 
         func backgroundImageView() -> some View {
             VStack {
-                if let backgroundImage {
+                if let backgroundImage = viewModel.backgroundImage {
                     Image(uiImage: backgroundImage)
                         .resizable()
                 } else {
@@ -98,7 +95,7 @@ struct MainView: View {
 
         func profileImageView() -> some View {
             VStack {
-                if let profileImage {
+                if let profileImage = viewModel.profileImage {
                     Image(uiImage: profileImage)
                         .resizable()
                 } else {
