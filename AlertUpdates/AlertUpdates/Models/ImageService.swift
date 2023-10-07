@@ -17,13 +17,13 @@ extension ViewModel: ImageManageable {
         self.errorMessage = "Unable to download photos: \(errorMessage)."
     }
 
-    @MainActor func updateBackgroundImage(image: UIImage) {
-        self.backgroundImage = image
-    }
-
-    @MainActor func updateProfileImage(image: UIImage) {
-        self.profileImage = image
-    }
+//    @MainActor func updateBackgroundImage(image: UIImage) {
+//        self.backgroundImage = image
+//    }
+//
+//    @MainActor func updateProfileImage(image: UIImage) {
+//        self.profileImage = image
+//    }
 
     func searchImages(search: String) {
         Task {
@@ -64,17 +64,21 @@ extension ViewModel: ImageManageable {
 
     func downloadImage(url: String) async -> DownloadImageResult {
         guard let url = URL(string: url) else {
+            print("===> ImageService: downloadImage ERROR, missing URL")
             return .failure(error: .invalidURL)
         }
 
         do {
             let data = try Data(contentsOf: url)
             if let image = UIImage(data: data) {
+                print("===> ImageService: downloadImage SUCCESS: \(url)")
                 return .success(image: image)
             } else {
+                print("===> ImageService: downloadImage ERROR, unable to create UIImage")
                 return .failure(error: .imageCreationError)
             }
         } catch {
+            print("===> ImageService: downloadImage ERROR, unable to download image data")
             return .failure(error: .dataError)
         }
     }

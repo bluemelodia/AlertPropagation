@@ -12,11 +12,11 @@ struct MainView: View {
     @State private var searchText = ""
 
     var profileImage: UIImage? {
-        viewModel.getProfileImage()
+        viewModel.profileImage
     }
 
     var backgroundImage: UIImage? {
-        viewModel.getBackgroundImage()
+        viewModel.backgroundImage
     }
 
     var body: some View {
@@ -58,11 +58,11 @@ struct MainView: View {
                 }
             }
         }
-        .onChange(of: viewModel.imageManager?.backgroundImage) { image in
-            print("BG IMAGE CHANGED: \(image)")
+        .onChange(of: viewModel.backgroundImage) { image in
+            print("===> MainView: background image changed: \(image)")
         }
-        .onChange(of: viewModel.imageManager?.profileImage) { image in
-            print("PROFILE IMAGE CHANGED: \(image)")
+        .onChange(of: viewModel.profileImage) { image in
+            print("===> MainView: profile image changed: \(image)")
         }
     }
 

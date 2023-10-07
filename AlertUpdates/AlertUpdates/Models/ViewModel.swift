@@ -18,36 +18,34 @@ class ViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var loadingState: LoadingState = .idle
 
-    @Published private(set) var imageManager: ImageManager?
-    @Published var backgroundImage: UIImage?
-    @Published var profileImage: UIImage?
+    lazy var imageManager: ImageManager = {
+        ImageManager(imageManageable: self)
+    }()
 
-    @MainActor func getBackgroundImage() -> UIImage? {
-        imageManager?.backgroundImage
+    @MainActor var backgroundImage: UIImage? {
+        imageManager.backgroundImage
     }
 
-    @MainActor func getProfileImage() -> UIImage? {
-        imageManager?.profileImage
-    }
-
-    init() {
-        self.imageManager = ImageManager(imageManageable: self)
+    @MainActor var profileImage: UIImage? {
+        imageManager.profileImage
     }
 
     func selectImage(imageType: ImageType, url: String) {
         Task {
             switch(imageType) {
             case .background:
-                await imageManager?.selectBackgroundImage(url: url)
+                print("===> ViewModel: request to download background image")
+                await imageManager.selectBackgroundImage(url: url)
             case .profile:
-                await imageManager?.selectProfileImage(url: url)
+                print("===> ViewModel: request to download profile image")
+                await imageManager.selectProfileImage(url: url)
             }
         }
     }
 
     func commitChanges() {
         Task {
-            await imageManager?.updateProfile()
+            await imageManager.updateProfile()
         }
     }
 

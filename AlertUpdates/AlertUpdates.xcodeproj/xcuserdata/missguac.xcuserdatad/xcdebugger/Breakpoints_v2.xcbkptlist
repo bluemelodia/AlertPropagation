@@ -395,6 +395,36 @@
                   endingLineNumber = "92"
                   offsetFromSymbolStart = "460">
                </Location>
+               <Location
+                  uuid = "BDE8410D-5310-4755-A566-F7C1082618B3 - 1dccf0f08d206b54"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Image, SwiftUI.Color&gt; in AlertUpdates.MainView.BannerView.backgroundImageView() -&gt; some"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "BDE8410D-5310-4755-A566-F7C1082618B3 - 1dccf0f08d206b54"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Image, SwiftUI.Color&gt; in AlertUpdates.MainView.BannerView.backgroundImageView() -&gt; some"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "880">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -442,6 +472,36 @@
                   startingLineNumber = "102"
                   endingLineNumber = "102"
                   offsetFromSymbolStart = "360">
+               </Location>
+               <Location
+                  uuid = "DE470CFC-8FCA-4902-8F50-C7245CA04548 - 4695dcc51cc0f8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Image, AlertUpdates.MainView.PlaceholderView&gt; in AlertUpdates.MainView.BannerView.profileImageView() -&gt; some"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "DE470CFC-8FCA-4902-8F50-C7245CA04548 - 4695dcc51cc0f8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Image, AlertUpdates.MainView.PlaceholderView&gt; in AlertUpdates.MainView.BannerView.profileImageView() -&gt; some"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "676">
                </Location>
             </Locations>
          </BreakpointContent>

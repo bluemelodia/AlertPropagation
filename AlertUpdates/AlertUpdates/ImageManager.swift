@@ -10,13 +10,13 @@ import UIKit
 
 protocol ImageManageable {
     func downloadImage(url: String) async -> DownloadImageResult
-    @MainActor func updateBackgroundImage(image: UIImage)
-    @MainActor func updateProfileImage(image: UIImage)
+//    @MainActor func updateBackgroundImage(image: UIImage)
+//    @MainActor func updateProfileImage(image: UIImage)
 }
 
 actor ImageManager: ObservableObject {
-    @Published @MainActor private(set) var backgroundImage: UIImage?
-    @Published @MainActor private(set) var profileImage: UIImage?
+    @MainActor private(set) var backgroundImage: UIImage?
+    @MainActor private(set) var profileImage: UIImage?
 
     let imageManagable: ImageManageable
 
@@ -34,18 +34,22 @@ actor ImageManager: ObservableObject {
         self.imageManagable = imageManageable
     }
 
-    func selectBackgroundImage(url: String) {
+    func selectBackgroundImage(url: String) async {
+        await updateBackgroundImage(image: UIImage(systemName: "ellipsis.circle.fill")!)
+
         backgroundImageURL = url
         downloadBackgroundImage(url: url)
     }
 
-    func selectProfileImage(url: String) {
+    func selectProfileImage(url: String) async {
+        await updateProfileImage(image: UIImage(systemName: "ellipsis.circle.fill")!)
+
         profileImageURL = url
         downloadProfileImage(url: url)
     }
 
     func updateProfile() async {
-        print("===> ImageManager: updateProfile")
+        print("===> ImageManager: request to update profile")
         await waitForDownloads()
     }
 
@@ -62,13 +66,13 @@ actor ImageManager: ObservableObject {
     }
 
     @MainActor private func updateProfileImage(image: UIImage) {
-        print("===> ImageManager: updateProfileImage: \(image)")
+        print("===> ImageManager: updateProfileImage")
         profileImage = image
         objectWillChange.send()
     }
 
     @MainActor private func updateBackgroundImage(image: UIImage) {
-        print("===> ImageManager: updateBackgroundImage: \(image)")
+        print("===> ImageManager: updateBackgroundImage")
         backgroundImage = image
         objectWillChange.send()
     }
