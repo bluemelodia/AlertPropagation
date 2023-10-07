@@ -330,10 +330,10 @@
             filePath = "AlertUpdates/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "BannerView"
-            landmarkType = "14">
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "backgroundImageView()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "BDE8410D-5310-4755-A566-F7C1082618B3 - 4695dcc51cc127a"
@@ -468,10 +468,10 @@
             filePath = "AlertUpdates/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "BannerView"
-            landmarkType = "14">
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "profileImageView()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "DE470CFC-8FCA-4902-8F50-C7245CA04548 - 4695dcc51cc0ca4"

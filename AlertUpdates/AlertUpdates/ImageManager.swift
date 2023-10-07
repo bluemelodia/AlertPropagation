@@ -10,8 +10,8 @@ import UIKit
 
 protocol ImageManageable {
     func downloadImage(url: String) async -> DownloadImageResult
-//    @MainActor func updateBackgroundImage(image: UIImage)
-//    @MainActor func updateProfileImage(image: UIImage)
+    @MainActor func updateBackgroundImage(image: UIImage)
+    @MainActor func updateProfileImage(image: UIImage)
 }
 
 actor ImageManager: ObservableObject {
@@ -119,7 +119,7 @@ extension ImageManager {
                 updateImageDownloadStatus(imageType: .background, status: .downloaded)
                 Task { @MainActor in
                     // This will work.
-                    // imageManagable.updateBackgroundImage(image: image)
+                    imageManagable.updateBackgroundImage(image: image)
 
                     // This does not work.
                     updateBackgroundImage(image: image)
@@ -134,7 +134,7 @@ extension ImageManager {
             case let .success(image):
                 updateImageDownloadStatus(imageType: .background, status: .downloaded)
                 Task { @MainActor in
-                    // imageManagable.updateProfileImage(image: image)
+                    imageManagable.updateProfileImage(image: image)
                     updateProfileImage(image: image)
                 }
             default:

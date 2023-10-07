@@ -19,9 +19,8 @@ class ViewModel: ObservableObject {
     @Published var loadingState: LoadingState = .idle
     @Published var imageManager: ImageManager?
 
-//    lazy var imageManager: ImageManager = {
-//        ImageManager(imageManageable: self)
-//    }()
+    @Published var vmBackgroundImage: UIImage?
+    @Published var vmProfileImage: UIImage?
 
     init() {
         print("===> ViewModel: initialize the image manager")
