@@ -9,14 +9,22 @@ import Foundation
 import UIKit
 
 extension ViewModel: ImageManageable {
+    @MainActor func setPhotos(photos: [Photo]) {
+        self.photos = photos
+    }
+
+    @MainActor func setError(errorMessage: String) {
+        self.errorMessage = "Unable to download photos: \(errorMessage)."
+    }
+
     func searchImages(search: String) {
         Task {
             let result = await loadImages(search: search)
             switch (result) {
             case let .success(photos):
-                self.photos = photos
+                await setPhotos(photos: photos)
             case let .failure(errorMessage):
-                self.errorMessage = "Unable to download photos: \(errorMessage)."
+                await setError(errorMessage: errorMessage.localizedDescription)
             }
         }
     }

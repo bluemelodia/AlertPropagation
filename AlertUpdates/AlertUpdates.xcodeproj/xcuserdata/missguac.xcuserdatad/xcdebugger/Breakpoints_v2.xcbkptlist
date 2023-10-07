@@ -323,47 +323,77 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "324E2F35-087B-4091-83B0-837AB5AE653A"
+            uuid = "BDE8410D-5310-4755-A566-F7C1082618B3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AlertUpdates/ImageManager.swift"
+            filePath = "AlertUpdates/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "updateImageDownloadStatuses(results:)"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "backgroundImageView()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "324E2F35-087B-4091-83B0-837AB5AE653A - 97eb25ab5d9b941d"
+                  uuid = "BDE8410D-5310-4755-A566-F7C1082618B3 - 4695dcc51cc127a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "AlertUpdates.ImageManager.updateImageDownloadStatuses(results: Swift.Dictionary&lt;AlertUpdates.ImageType, Swift.Optional&lt;AlertUpdates.DownloadImageResult&gt;&gt;) -&gt; ()"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Image, AlertUpdates.MainView.PlaceholderView&gt; in AlertUpdates.MainView.BannerView.profileImageView() -&gt; some"
                   moduleName = "AlertUpdates"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/ImageManager.swift"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/MainView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "168">
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "188">
                </Location>
                <Location
-                  uuid = "324E2F35-087B-4091-83B0-837AB5AE653A - 97eb25ab5d9b941d"
+                  uuid = "BDE8410D-5310-4755-A566-F7C1082618B3 - 4695dcc51cc127a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "AlertUpdates.ImageManager.updateImageDownloadStatuses(results: Swift.Dictionary&lt;AlertUpdates.ImageType, Swift.Optional&lt;AlertUpdates.DownloadImageResult&gt;&gt;) -&gt; ()"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Image, AlertUpdates.MainView.PlaceholderView&gt; in AlertUpdates.MainView.BannerView.profileImageView() -&gt; some"
                   moduleName = "AlertUpdates"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/ImageManager.swift"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/MainView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "280">
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "456">
+               </Location>
+               <Location
+                  uuid = "BDE8410D-5310-4755-A566-F7C1082618B3 - 1dccf0f08d20740e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Image, SwiftUI.Color&gt; in AlertUpdates.MainView.BannerView.backgroundImageView() -&gt; some"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "BDE8410D-5310-4755-A566-F7C1082618B3 - 1dccf0f08d20740e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Image, SwiftUI.Color&gt; in AlertUpdates.MainView.BannerView.backgroundImageView() -&gt; some"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "460">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -371,97 +401,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1ED9459D-0FD5-48BA-B602-454D8F89A4D6"
+            uuid = "DE470CFC-8FCA-4902-8F50-C7245CA04548"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AlertUpdates/Models/ImageService.swift"
+            filePath = "AlertUpdates/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "downloadImage(url:)"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "profileImageView()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "586FE797-B1CA-43AE-8D12-85F1CD077027"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AlertUpdates/Models/ImageService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "downloadImage(url:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "26B7EB68-966B-48DD-B906-78F9B3B2E9C3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AlertUpdates/Models/ImageService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "downloadImage(url:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EED59CA5-C246-4150-A044-E03A37A9B2DC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AlertUpdates/Models/ImageService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "downloadImage(url:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4CE11CD6-CB92-424A-AE78-734274422B92"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AlertUpdates/ImageManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "updateImageDownloadStatuses(results:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "14240D59-F9B5-4EAB-9B5A-08AF4C6807B9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AlertUpdates/ImageManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "updateImageDownloadStatuses(results:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DE470CFC-8FCA-4902-8F50-C7245CA04548 - 4695dcc51cc0ca4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Image, AlertUpdates.MainView.PlaceholderView&gt; in AlertUpdates.MainView.BannerView.profileImageView() -&gt; some"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "DE470CFC-8FCA-4902-8F50-C7245CA04548 - 4695dcc51cc0ca4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Image, AlertUpdates.MainView.PlaceholderView&gt; in AlertUpdates.MainView.BannerView.profileImageView() -&gt; some"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "360">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

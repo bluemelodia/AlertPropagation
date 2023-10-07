@@ -13,8 +13,8 @@ protocol ImageManageable {
 }
 
 actor ImageManager: ObservableObject {
-    @MainActor var backgroundImage: UIImage?
-    @MainActor var profileImage: UIImage?
+    @MainActor private(set) var backgroundImage: UIImage?
+    @MainActor private(set) var profileImage: UIImage?
 
     let imageManagable: ImageManageable
 
@@ -59,10 +59,12 @@ actor ImageManager: ObservableObject {
     }
 
     @MainActor private func updateProfileImage(image: UIImage) {
+        print("===> updated profile image: \(image)")
         profileImage = image
     }
 
     @MainActor private func updateBackgroundImage(image: UIImage) {
+        print("===> updated background image: \(image)")
         backgroundImage = image
     }
 }

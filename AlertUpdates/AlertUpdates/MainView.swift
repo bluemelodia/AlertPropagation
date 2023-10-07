@@ -11,11 +11,25 @@ struct MainView: View {
     @ObservedObject var viewModel: ViewModel
     @State private var searchText = ""
 
+    var profileImage: UIImage? {
+        print("===> profile image: \(viewModel.profileImage)")
+        return viewModel.profileImage
+    }
+
+    var backgroundImage: UIImage? {
+        print("===> background image: \(viewModel.profileImage)")
+        return viewModel.backgroundImage
+    }
+
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack(spacing: 8.0) {
-                    BannerView(profileImage: viewModel.profileImage, backgroundImage: viewModel.backgroundImage, tapHandler: viewModel.commitChanges)
+                    BannerView(
+                        profileImage: profileImage,
+                        backgroundImage: backgroundImage,
+                        tapHandler: viewModel.commitChanges
+                    )
                     ScrollView {
                         if let photos = viewModel.photos {
                             ForEach(photos, id: \.id) { photo in
@@ -79,6 +93,7 @@ struct MainView: View {
             VStack {
                 if let backgroundImage {
                     Image(uiImage: backgroundImage)
+                        .resizable()
                 } else {
                     Color.gray
                 }
@@ -89,6 +104,7 @@ struct MainView: View {
             VStack {
                 if let profileImage {
                     Image(uiImage: profileImage)
+                        .resizable()
                 } else {
                     PlaceholderView()
                 }
