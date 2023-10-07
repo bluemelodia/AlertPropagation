@@ -17,6 +17,14 @@ extension ViewModel: ImageManageable {
         self.errorMessage = "Unable to download photos: \(errorMessage)."
     }
 
+    @MainActor func updateBackgroundImage(image: UIImage) {
+        self.backgroundImage = image
+    }
+
+    @MainActor func updateProfileImage(image: UIImage) {
+        self.profileImage = image
+    }
+
     func searchImages(search: String) {
         Task {
             let result = await loadImages(search: search)

@@ -12,13 +12,11 @@ struct MainView: View {
     @State private var searchText = ""
 
     var profileImage: UIImage? {
-        print("===> profile image: \(viewModel.profileImage)")
-        return viewModel.profileImage
+        viewModel.profileImage
     }
 
     var backgroundImage: UIImage? {
-        print("===> background image: \(viewModel.profileImage)")
-        return viewModel.backgroundImage
+        viewModel.backgroundImage
     }
 
     var body: some View {
@@ -59,6 +57,12 @@ struct MainView: View {
                     ProgressView()
                 }
             }
+        }
+        .onChange(of: viewModel.imageManager?.backgroundImage) { image in
+            print("BG IMAGE CHANGED: \(image)")
+        }
+        .onChange(of: viewModel.imageManager?.profileImage) { image in
+            print("PROFILE IMAGE CHANGED: \(image)")
         }
     }
 

@@ -18,17 +18,11 @@ class ViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var loadingState: LoadingState = .idle
 
-    @MainActor var profileImage: UIImage? {
-        imageManager?.profileImage
-    }
+    @Published private(set) var imageManager: ImageManager?
+    @Published var profileImage: UIImage?
+    @Published var backgroundImage: UIImage?
 
-    @MainActor var backgroundImage: UIImage? {
-        imageManager?.backgroundImage
-    }
-
-    private var imageManager: ImageManager?
-
-    public init() {
+    init() {
         self.imageManager = ImageManager(imageManageable: self)
     }
 

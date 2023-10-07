@@ -10,6 +10,8 @@ import UIKit
 
 protocol ImageManageable {
     func downloadImage(url: String) async -> DownloadImageResult
+    @MainActor func updateBackgroundImage(image: UIImage)
+    @MainActor func updateProfileImage(image: UIImage)
 }
 
 actor ImageManager: ObservableObject {
@@ -101,6 +103,7 @@ extension ImageManager {
 extension ImageManager {
     var backgroundImageDownloaded: Bool {
         imageDownloadStatus[.background] == .downloaded
+        
     }
 
     var profileImageDownloaded: Bool {
@@ -113,6 +116,7 @@ extension ImageManager {
             case let .success(image):
                 updateImageDownloadStatus(imageType: .background, status: .downloaded)
                 Task { @MainActor in
+                    imageManagable.updateBackgroundImage(image: image)
                     updateBackgroundImage(image: image)
                 }
             default:
@@ -125,6 +129,7 @@ extension ImageManager {
             case let .success(image):
                 updateImageDownloadStatus(imageType: .background, status: .downloaded)
                 Task { @MainActor in
+                    imageManagable.updateProfileImage(image: image)
                     updateProfileImage(image: image)
                 }
             default:
