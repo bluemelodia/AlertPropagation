@@ -19,8 +19,16 @@ class ViewModel: ObservableObject {
     @Published var loadingState: LoadingState = .idle
 
     @Published private(set) var imageManager: ImageManager?
-    @Published var profileImage: UIImage?
     @Published var backgroundImage: UIImage?
+    @Published var profileImage: UIImage?
+
+    @MainActor func getBackgroundImage() -> UIImage? {
+        imageManager?.backgroundImage
+    }
+
+    @MainActor func getProfileImage() -> UIImage? {
+        imageManager?.profileImage
+    }
 
     init() {
         self.imageManager = ImageManager(imageManageable: self)
@@ -39,7 +47,7 @@ class ViewModel: ObservableObject {
 
     func commitChanges() {
         Task {
-            await imageManager?.commitChanges()
+            await imageManager?.updateProfile()
         }
     }
 

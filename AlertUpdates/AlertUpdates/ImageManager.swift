@@ -15,8 +15,8 @@ protocol ImageManageable {
 }
 
 actor ImageManager: ObservableObject {
-    @MainActor private(set) var backgroundImage: UIImage?
-    @MainActor private(set) var profileImage: UIImage?
+    @Published @MainActor private(set) var backgroundImage: UIImage?
+    @Published @MainActor private(set) var profileImage: UIImage?
 
     let imageManagable: ImageManageable
 
@@ -44,7 +44,8 @@ actor ImageManager: ObservableObject {
         downloadProfileImage(url: url)
     }
 
-    func commitChanges() async {
+    func updateProfile() async {
+        print("===> ImageManager: updateProfile")
         await waitForDownloads()
     }
 
@@ -61,13 +62,15 @@ actor ImageManager: ObservableObject {
     }
 
     @MainActor private func updateProfileImage(image: UIImage) {
-        print("===> updated profile image: \(image)")
+        print("===> ImageManager: updateProfileImage: \(image)")
         profileImage = image
+        objectWillChange.send()
     }
 
     @MainActor private func updateBackgroundImage(image: UIImage) {
-        print("===> updated background image: \(image)")
+        print("===> ImageManager: updateBackgroundImage: \(image)")
         backgroundImage = image
+        objectWillChange.send()
     }
 }
 
@@ -103,7 +106,6 @@ extension ImageManager {
 extension ImageManager {
     var backgroundImageDownloaded: Bool {
         imageDownloadStatus[.background] == .downloaded
-        
     }
 
     var profileImageDownloaded: Bool {
@@ -116,7 +118,10 @@ extension ImageManager {
             case let .success(image):
                 updateImageDownloadStatus(imageType: .background, status: .downloaded)
                 Task { @MainActor in
-                    imageManagable.updateBackgroundImage(image: image)
+                    // This will work.
+                    // imageManagable.updateBackgroundImage(image: image)
+
+                    // This does not work.
                     updateBackgroundImage(image: image)
                 }
             default:
@@ -129,7 +134,7 @@ extension ImageManager {
             case let .success(image):
                 updateImageDownloadStatus(imageType: .background, status: .downloaded)
                 Task { @MainActor in
-                    imageManagable.updateProfileImage(image: image)
+                    // imageManagable.updateProfileImage(image: image)
                     updateProfileImage(image: image)
                 }
             default:

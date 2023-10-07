@@ -12,11 +12,11 @@ struct MainView: View {
     @State private var searchText = ""
 
     var profileImage: UIImage? {
-        viewModel.profileImage
+        viewModel.getProfileImage()
     }
 
     var backgroundImage: UIImage? {
-        viewModel.backgroundImage
+        viewModel.getBackgroundImage()
     }
 
     var body: some View {
