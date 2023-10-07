@@ -506,5 +506,163 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3502F50A-0884-43DD-809C-035BBC65EB9A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlertUpdates/Models/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "selectImage(imageType:url:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3502F50A-0884-43DD-809C-035BBC65EB9A - 5b82586c322661c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AlertUpdates.ViewModel.selectImage(imageType: AlertUpdates.ImageType, url: Swift.String) -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  uuid = "3502F50A-0884-43DD-809C-035BBC65EB9A - b602952b83260a96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in AlertUpdates.ViewModel.selectImage(imageType: AlertUpdates.ImageType, url: Swift.String) -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "3502F50A-0884-43DD-809C-035BBC65EB9A - 13f7c104008965c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AlertUpdates.ViewModel.selectImage(imageType: AlertUpdates.ImageType, url: Swift.String) -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "395A17FA-F995-4093-B426-8070A7DD4046"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlertUpdates/ImageManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "selectBackgroundImage(url:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "395A17FA-F995-4093-B426-8070A7DD4046 - 8b049fb8d762fc8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for AlertUpdates.ImageManager.selectBackgroundImage(url: Swift.String) async -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/ImageManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "395A17FA-F995-4093-B426-8070A7DD4046 - e294c043f9b71e88"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) suspend resume partial function for AlertUpdates.ImageManager.selectBackgroundImage(url: Swift.String) async -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/ImageManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "395A17FA-F995-4093-B426-8070A7DD4046 - 5a67056d2ccbb889"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for AlertUpdates.ImageManager.selectBackgroundImage(url: Swift.String) async -&gt; ()"
+                  moduleName = "AlertUpdates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/ImageManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "464AC639-7589-4FB8-A1FF-5058FBB85976"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlertUpdates/ImageManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "updateBackgroundImage(image:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C999B4A-FA08-41A0-8B2C-8CFE8F4B1A35"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlertUpdates/ImageManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "updateProfileImage(image:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
