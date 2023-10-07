@@ -35,30 +35,16 @@ actor ImageManager: ObservableObject {
     }
 
     func selectBackgroundImage(url: String) async {
-        await updateBackgroundImage(image: UIImage(systemName: "ellipsis.circle.fill")!)
         downloadBackgroundImage(url: url)
     }
 
     func selectProfileImage(url: String) async {
-        await updateProfileImage(image: UIImage(systemName: "ellipsis.circle.fill")!)
         downloadProfileImage(url: url)
     }
 
     func updateProfile() async {
         print("===> ImageManager: request to update profile")
         await waitForDownloads()
-    }
-
-    func redownload() async {
-        if let profileImageURL,
-           !profileImageDownloaded {
-            downloadProfileImage(url: profileImageURL)
-        }
-
-        if let backgroundImageURL,
-            !backgroundImageDownloaded {
-            downloadBackgroundImage(url: backgroundImageURL)
-        }
     }
 
     @MainActor private func updateProfileImage(image: UIImage) {
@@ -104,24 +90,17 @@ extension ImageManager {
 
 /// Image download statuses.
 extension ImageManager {
-    var backgroundImageDownloaded: Bool {
-        imageDownloadStatus[.background] == .downloaded
-    }
-
-    var profileImageDownloaded: Bool {
-        imageDownloadStatus[.profile] == .downloaded
-    }
-
     private func updateImageDownloadStatuses(results: [ImageType: DownloadImageResult?]) {
         if let backgroundDownloadResult = results[.background] {
             switch (backgroundDownloadResult) {
             case let .success(image):
                 updateImageDownloadStatus(imageType: .background, status: .downloaded)
                 Task { @MainActor in
-                    // This will work.
+                    /// This will result in a UI update.
                     imageManagable.updateBackgroundImage(image: image)
 
-                    // This does not work.
+                    /// This will not update the UI unless the user performs another action
+                    /// that forces the SwiftUI view to redraw.
                     updateBackgroundImage(image: image)
                 }
             default:

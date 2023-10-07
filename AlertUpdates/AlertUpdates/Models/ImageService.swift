@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// Conforms to the ImageManageable protocol.
 extension ViewModel: ImageManageable {
     @MainActor func setPhotos(photos: [Photo]) {
         self.photos = photos
@@ -18,13 +19,36 @@ extension ViewModel: ImageManageable {
     }
 
     @MainActor func updateBackgroundImage(image: UIImage) {
-        self.vmBackgroundImage = image
+       self.vmBackgroundImage = image
     }
 
     @MainActor func updateProfileImage(image: UIImage) {
         self.vmProfileImage = image
     }
 
+    func downloadImage(url: String) async -> DownloadImageResult {
+        guard let url = URL(string: url) else {
+            print("===> ImageService: downloadImage ERROR, missing URL")
+            return .failure(error: .invalidURL)
+        }
+
+        do {
+            let data = try Data(contentsOf: url)
+            if let image = UIImage(data: data) {
+                print("===> ImageService: downloadImage SUCCESS: \(url)")
+                return .success(image: image)
+            } else {
+                print("===> ImageService: downloadImage ERROR, unable to create UIImage")
+                return .failure(error: .imageCreationError)
+            }
+        } catch {
+            print("===> ImageService: downloadImage ERROR, unable to download image data")
+            return .failure(error: .dataError)
+        }
+    }
+}
+
+extension ViewModel {
     func searchImages(search: String) {
         Task {
             let result = await loadImages(search: search)
@@ -61,26 +85,4 @@ extension ViewModel: ImageManageable {
             return .failure(error: .invalidData(errorMessage: error.localizedDescription))
         }
     }
-
-    func downloadImage(url: String) async -> DownloadImageResult {
-        guard let url = URL(string: url) else {
-            print("===> ImageService: downloadImage ERROR, missing URL")
-            return .failure(error: .invalidURL)
-        }
-
-        do {
-            let data = try Data(contentsOf: url)
-            if let image = UIImage(data: data) {
-                print("===> ImageService: downloadImage SUCCESS: \(url)")
-                return .success(image: image)
-            } else {
-                print("===> ImageService: downloadImage ERROR, unable to create UIImage")
-                return .failure(error: .imageCreationError)
-            }
-        } catch {
-            print("===> ImageService: downloadImage ERROR, unable to download image data")
-            return .failure(error: .dataError)
-        }
-    }
 }
-

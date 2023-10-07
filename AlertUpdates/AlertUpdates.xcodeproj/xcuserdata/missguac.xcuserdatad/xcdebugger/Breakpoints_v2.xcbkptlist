@@ -330,8 +330,8 @@
             filePath = "AlertUpdates/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "backgroundImageView()"
             landmarkType = "7">
             <Locations>
@@ -468,8 +468,8 @@
             filePath = "AlertUpdates/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "profileImageView()"
             landmarkType = "7">
             <Locations>
@@ -669,8 +669,8 @@
             filePath = "AlertUpdates/ImageManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "updateBackgroundImage(image:)"
             landmarkType = "7">
             <Locations>
@@ -717,8 +717,8 @@
             filePath = "AlertUpdates/ImageManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "updateProfileImage(image:)"
             landmarkType = "7">
             <Locations>
