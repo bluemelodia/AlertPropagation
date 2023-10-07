@@ -9,12 +9,18 @@ import Foundation
 import UIKit
 
 protocol ImageManageable {
+    /// Makes the call to download the image.
     func downloadImage(url: String) async -> DownloadImageResult
+
+    /// Informs the consumer that they should update the background / profile image.
+    /// Ideally these functions shouldn't be necessary - the SwiftUI view should be updating
+    /// in response to changes in the backgroundImage / profileImage properties.
     @MainActor func updateBackgroundImage(image: UIImage)
     @MainActor func updateProfileImage(image: UIImage)
 }
 
 actor ImageManager: ObservableObject {
+    /// These properties have to be @MainActor so that the UI can access them.
     @Published @MainActor private(set) var backgroundImage: UIImage?
     @Published @MainActor private(set) var profileImage: UIImage?
 
@@ -43,17 +49,17 @@ actor ImageManager: ObservableObject {
     }
 
     func updateProfile() async {
-        print("===> ImageManager: request to update profile")
+        // print("===> ImageManager: request to update profile")
         await waitForDownloads()
     }
 
     @MainActor private func updateProfileImage(image: UIImage) {
-        print("===> ImageManager: updateProfileImage")
+        // print("===> ImageManager: updateProfileImage")
         profileImage = image
     }
 
     @MainActor private func updateBackgroundImage(image: UIImage) {
-        print("===> ImageManager: updateBackgroundImage")
+        // print("===> ImageManager: updateBackgroundImage")
         backgroundImage = image
     }
 }

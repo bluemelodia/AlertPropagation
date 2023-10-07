@@ -576,8 +576,8 @@
             filePath = "AlertUpdates/ImageManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "selectBackgroundImage(url:)"
             landmarkType = "7">
             <Locations>
@@ -669,8 +669,8 @@
             filePath = "AlertUpdates/ImageManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "updateBackgroundImage(image:)"
             landmarkType = "7">
             <Locations>
@@ -717,8 +717,8 @@
             filePath = "AlertUpdates/ImageManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "updateProfileImage(image:)"
             landmarkType = "7">
             <Locations>

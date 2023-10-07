@@ -19,32 +19,29 @@ class ViewModel: ObservableObject {
     @Published var loadingState: LoadingState = .idle
     @Published var imageManager: ImageManager?
 
+    /// Actual: the SwiftUI view will only re-render when these properties change.
     @Published var vmBackgroundImage: UIImage?
     @Published var vmProfileImage: UIImage?
 
     init() {
-        print("===> ViewModel: initialize the image manager")
         self.imageManager = ImageManager(imageManageable: self)
     }
 
+    /// Ideal: the SwiftUI view should re-render each time these properties change.
     @MainActor var backgroundImage: UIImage? {
-        print("===> ViewModel: background image changed")
-        return imageManager?.backgroundImage
+        imageManager?.backgroundImage
     }
 
     @MainActor var profileImage: UIImage? {
-        print("===> ViewModel: profile image changed")
-        return imageManager?.profileImage
+        imageManager?.profileImage
     }
 
     func selectImage(imageType: ImageType, url: String) {
         Task {
             switch(imageType) {
             case .background:
-                print("===> ViewModel: request to download background image")
                 await imageManager?.selectBackgroundImage(url: url)
             case .profile:
-                print("===> ViewModel: request to download profile image")
                 await imageManager?.selectProfileImage(url: url)
             }
         }

@@ -58,10 +58,10 @@ struct MainView: View {
             }
         }
         .onChange(of: viewModel.backgroundImage) { image in
-            print("===> MainView: background image changed: \(image)")
+            // print("===> MainView: background image changed: \(image)")
         }
         .onChange(of: viewModel.profileImage) { image in
-            print("===> MainView: profile image changed: \(image)")
+            // print("===> MainView: profile image changed: \(image)")
         }
     }
 }
