@@ -7,22 +7,25 @@
 
 import Foundation
 
-struct ImageService {
-    private let baseURL = "https://api.pexels.com/v1/search?query="
-    private let curatedURL = "https://api.pexels.com/v1/curated?per_page=1"
-
-    func loadData(search: String, curated: Bool = false) async -> [Photo]? {
-        var results: [Photo]?
-        var url: String = curatedURL
-
-        if !curated {
-            let searchTerm = search.components(separatedBy: " ").joined(separator: "+")
-            url = "\(baseURL)\(searchTerm)&per_page=25"
+extension ViewModel: ImageManageable {
+    func searchImages(search: String) {
+        Task {
+            let result = await loadImages(search: search)
+            switch (result) {
+            case let .success(photos):
+                self.photos = photos
+            case let .failure(errorMessage):
+                self.errorMessage = "Unable to download photos: \(errorMessage)."
+            }
         }
+    }
+
+    private func loadImages(search: String) async -> FetchImagesResult {
+        let searchTerm = search.components(separatedBy: " ").joined(separator: "+")
+        let url = "https://api.pexels.com/v1/search?query=\(searchTerm)&per_page=25"
 
         guard let url = URL(string: url) else {
-            print("Invalid URL: \(url)")
-            return results
+            return .failure(error: .invalidURL)
         }
 
         var urlRequest = URLRequest(url: url)
@@ -33,13 +36,13 @@ struct ImageService {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
 
             if let decodedData = try? JSONDecoder().decode(Photos.self, from: data) {
-                results = decodedData.photos
+                return .success(photos: decodedData.photos)
+            } else {
+                return .failure(error: .decodeError)
             }
         } catch {
-            print("Invalid data: \(error.localizedDescription)")
+            return .failure(error: .invalidData(errorMessage: error.localizedDescription))
         }
-
-        return results
     }
 }
 

@@ -20,6 +20,8 @@ struct MainView: View {
                             ForEach(photos, id: \.id) { photo in
                                 PhotoView(photo: photo, viewModel: viewModel)
                             }
+                        } else if let error = viewModel.errorMessage {
+                            Text(error)
                         } else {
                             Text("No results found.")
                         }
@@ -33,40 +35,15 @@ struct MainView: View {
                 case .loading:
                     ProgressView()
                 }
-
-                if viewModel.networkBanner != nil {
-                    HStack(alignment: .top) {
-                        VStack {
-                            ZStack {
-                                Color.purple
-                                Text("No internet.")
-                                    .foregroundColor(.white)
-                            }
-                            .frame(height: 44.0)
-
-                            Spacer()
-                        }
-                    }
-                }
             }
         }
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search photos and videos.")
-        .onReceive(viewModel.$networkStatus, perform: { networkStatus in
-            switch(networkStatus) {
-            case .online:
-                viewModel.hideNetworkBanner()
-            case .offline:
-                viewModel.showNetworkBanner()
-            }
-        })
         .onChange(of: searchText, perform: { query in
             if query.isEmpty {
                 return
             }
 
-            // viewModel.loadPhotos(search: query)
-            viewModel.loadImages(search: query)
-            // viewModel.loadContinuation(search: query)
+            viewModel.searchImages(search: query)
         })
     }
 
@@ -91,7 +68,7 @@ struct MainView: View {
                                 }
 
                                 Task {
-                                    self.image = await viewModel.loadImage(url: url)
+                                    //self.image = await viewModel.loadImage(url: url)
                                 }
                             }
                         }

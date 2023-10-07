@@ -14,15 +14,12 @@
 		145633E22A86950A00B75309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145633E02A86950A00B75309 /* LaunchScreen.storyboard */; };
 		145633EC2A8695F200B75309 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145633EB2A8695F200B75309 /* MainView.swift */; };
 		145633EE2A86A03400B75309 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145633ED2A86A03400B75309 /* ViewModel.swift */; };
-		147414A72AA1780A0054C7DA /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147414A62AA1780A0054C7DA /* NetworkStatus.swift */; };
 		14C9C23D2ABBD241003C53CD /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C23C2ABBD241003C53CD /* ImageService.swift */; };
 		14C9C23F2ABF247C003C53CD /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C23E2ABF247B003C53CD /* Keys.swift */; };
 		14C9C2432ABF28DE003C53CD /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C2422ABF28DE003C53CD /* Images.swift */; };
 		14C9C2472ABF2928003C53CD /* ReferenceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C2462ABF2928003C53CD /* ReferenceImage.swift */; };
-		14C9C24B2AC07461003C53CD /* ImageService-Continuation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C24A2AC07461003C53CD /* ImageService-Continuation.swift */; };
-		14C9C24F2AC73236003C53CD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C24E2AC73236003C53CD /* Video.swift */; };
-		14C9C2512AC73257003C53CD /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C2502AC73257003C53CD /* Videos.swift */; };
-		14C9C2532AC9CCA8003C53CD /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C2522AC9CCA8003C53CD /* ImageCache.swift */; };
+		14C9C2572AD1964E003C53CD /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C2562AD1964E003C53CD /* ImageManager.swift */; };
+		14C9C2592AD19954003C53CD /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C2582AD19954003C53CD /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,15 +32,12 @@
 		145633E32A86950A00B75309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		145633EB2A8695F200B75309 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		145633ED2A86A03400B75309 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		147414A62AA1780A0054C7DA /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
 		14C9C23C2ABBD241003C53CD /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		14C9C23E2ABF247B003C53CD /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		14C9C2422ABF28DE003C53CD /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		14C9C2462ABF2928003C53CD /* ReferenceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceImage.swift; sourceTree = "<group>"; };
-		14C9C24A2AC07461003C53CD /* ImageService-Continuation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageService-Continuation.swift"; sourceTree = "<group>"; };
-		14C9C24E2AC73236003C53CD /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		14C9C2502AC73257003C53CD /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
-		14C9C2522AC9CCA8003C53CD /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		14C9C2562AD1964E003C53CD /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		14C9C2582AD19954003C53CD /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,15 +71,13 @@
 			isa = PBXGroup;
 			children = (
 				145633D52A86950900B75309 /* AppDelegate.swift */,
+				14C9C2562AD1964E003C53CD /* ImageManager.swift */,
 				14C9C23C2ABBD241003C53CD /* ImageService.swift */,
-				14C9C24A2AC07461003C53CD /* ImageService-Continuation.swift */,
-				14C9C2522AC9CCA8003C53CD /* ImageCache.swift */,
 				14C9C2452ABF2911003C53CD /* Models */,
 				14C9C2412ABF28D4003C53CD /* Stubs */,
 				14C9C2402ABF24A1003C53CD /* Secrets */,
 				145633D72A86950900B75309 /* SceneDelegate.swift */,
 				145633D92A86950900B75309 /* ViewController.swift */,
-				147414A62AA1780A0054C7DA /* NetworkStatus.swift */,
 				145633EB2A8695F200B75309 /* MainView.swift */,
 				145633DE2A86950A00B75309 /* Assets.xcassets */,
 				145633E02A86950A00B75309 /* LaunchScreen.storyboard */,
@@ -106,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				14C9C2422ABF28DE003C53CD /* Images.swift */,
-				14C9C2502AC73257003C53CD /* Videos.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -116,7 +107,7 @@
 			children = (
 				145633ED2A86A03400B75309 /* ViewModel.swift */,
 				14C9C2462ABF2928003C53CD /* ReferenceImage.swift */,
-				14C9C24E2AC73236003C53CD /* Video.swift */,
+				14C9C2582AD19954003C53CD /* Image.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,17 +184,14 @@
 			files = (
 				145633DA2A86950900B75309 /* ViewController.swift in Sources */,
 				14C9C23F2ABF247C003C53CD /* Keys.swift in Sources */,
-				14C9C2512AC73257003C53CD /* Videos.swift in Sources */,
 				14C9C2432ABF28DE003C53CD /* Images.swift in Sources */,
 				14C9C23D2ABBD241003C53CD /* ImageService.swift in Sources */,
 				145633D62A86950900B75309 /* AppDelegate.swift in Sources */,
+				14C9C2572AD1964E003C53CD /* ImageManager.swift in Sources */,
 				145633EC2A8695F200B75309 /* MainView.swift in Sources */,
 				145633EE2A86A03400B75309 /* ViewModel.swift in Sources */,
-				14C9C24B2AC07461003C53CD /* ImageService-Continuation.swift in Sources */,
-				14C9C24F2AC73236003C53CD /* Video.swift in Sources */,
-				147414A72AA1780A0054C7DA /* NetworkStatus.swift in Sources */,
 				145633D82A86950900B75309 /* SceneDelegate.swift in Sources */,
-				14C9C2532AC9CCA8003C53CD /* ImageCache.swift in Sources */,
+				14C9C2592AD19954003C53CD /* Image.swift in Sources */,
 				14C9C2472ABF2928003C53CD /* ReferenceImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

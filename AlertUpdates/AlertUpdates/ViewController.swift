@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         self.dismiss(animated: true)
 
         viewModel = ViewModel()
-        startMonitor()
 
         if let viewModel {
             let mainView = MainView(viewModel: viewModel)
@@ -47,26 +46,6 @@ class ViewController: UIViewController {
                 controller.view.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 controller.view.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
-        }
-    }
-}
-
-extension ViewController {
-    public func startMonitor() {
-        monitor.start(queue: .global())
-
-        monitor.pathUpdateHandler = { [weak self] (path) in
-            guard let self else {
-                return
-            }
-
-            Task {
-                if path.status == .satisfied {
-                    self.viewModel?.setNetworkStatus(.online)
-                } else {
-                    self.viewModel?.setNetworkStatus(.offline)
-                }
-            }
         }
     }
 }

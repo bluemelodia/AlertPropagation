@@ -323,54 +323,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5B7E2D73-C279-4058-882A-50AC14E38195"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AlertUpdates/Models/ViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "loadImageGroup(search:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5B7E2D73-C279-4058-882A-50AC14E38195 - fbd5b8ea9ab0a473"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for AlertUpdates.ViewModel.loadImageGroup(search: Swift.String) async throws -&gt; Swift.Array&lt;AlertUpdates.Photo&gt;"
-                  moduleName = "AlertUpdates"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "5B7E2D73-C279-4058-882A-50AC14E38195 - fbd5b8ea9ab0a4b5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for AlertUpdates.ViewModel.loadImageGroup(search: Swift.String) async throws -&gt; Swift.Array&lt;AlertUpdates.Photo&gt;"
-                  moduleName = "AlertUpdates"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/missguac/Documents/AlertPropagation/AlertUpdates/AlertUpdates/Models/ViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "37DA6FB4-B790-44AD-B339-248D726AAD2C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -378,8 +330,8 @@
             filePath = "AlertUpdates/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "downloadAndShowImage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,8 +346,8 @@
             filePath = "AlertUpdates/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "downloadAndShowImage()"
             landmarkType = "7">
          </BreakpointContent>
